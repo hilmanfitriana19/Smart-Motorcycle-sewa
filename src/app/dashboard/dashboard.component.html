@@ -1,0 +1,178 @@
+<div class="main-content" style="margin-top:30px;background-color:#212F41;">
+  <div class="container-fluid">
+	<hr>
+
+      <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6" style="height:auto;">
+                    <div class="card card-chart">
+                        <div class="card-header card-header-warning card-header-icon">
+
+                            <div class="class-body">
+                                  <h4 class="card-title" style= "color:white; margin-left:250px;">MY MOTORCYCLE</h4>
+                                  <img class="img" style="width:250px; margin-left:165px; margin-top:20px;" src="./assets/img/motor.png"/>
+
+                                  <div class="card-category" style="margin-left:32%; margin-top:30px;align:right;margin-bottom:20px;" *ngIf="motor!=undefined">
+										  <h5>ID            : {{motor["mtr-id"]}}</h5>
+                                          <h5>Brand         : {{motor["brand"]}}</h5>
+										  <h5>Type          : {{motor["model"]}}</h5>
+										  <h5>License Plate : {{motor["license_plate"]}}</h5>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-chart">
+                  <div class="card-header card-header-success card-header-icon">
+                  </div>
+                  <div class="card-body">
+                        <div class="row">
+                                <div class="col-lg-11 col-md-6 col-sm-6">
+                                    <h4 class="card-title" style= "color:white; margin-left:300px;">LOCATION</h4>
+                                </div>
+                                <div class="col-lg-1 col-md-6 col-sm-6">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">update</i> -->
+                                    </div>
+                                </div>
+                        </div>
+                        <p class="card-category">Politeknik Negeri Bandung, Gegerkalong Hilir</p>
+						<a href="#pablo">
+                        <img class="img" style="height:280px; width:680px; margin-bottom:0px" src="./assets/img/maps.png" />
+                    </a>
+                  </div>
+
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-2">
+              <div class="card card-chart" style="height:200px;margin-top:0px;padding-top:0px;margin-down;0px">
+                  <div class="card-body">
+                      <h4 class="card-title" style= "color:white; margin-left:60px;">ALARM</h4>
+                      <label class="checkbox-inline">
+                            <img (click)="onoff()" [src]="img" width=80px style="margin-left:50px"/>
+                            <br>
+                          </label>
+
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card card-chart"  style="height:200px;margin-top:0px;margin-bottom:0px">
+                  <div class="card-body">
+                        <div class="row">
+                                <div class="col-lg-10 col-md-6 col-sm-6">
+                                        <h4 class="card-title" style= "color:white; margin-left:60px;">DISTANCE TRAVELLED</h4>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-6">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">update</i> -->
+                                    </div>
+                                </div>
+                        </div>
+                      <div class="card-category" *ngIf="data!=undefined"><h2 style="text-align:center;margin-top:20px">{{data.distance_traveled}} KM</h2></div>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card card-chart"  style="height:200px;margin-top:0px;margin-bottom:0px">
+                  <div class="card-body">
+                        <div class="row">
+                                <div class="col-lg-10 col-md-6 col-sm-6">
+                                        <h4 class="card-title" style= "color:white;margin-left:75px;" >HOURS TRAVELLED</h4>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-6">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">update</i> -->
+                                    </div>
+                                </div>
+                        </div>
+
+
+                      <div class="card-category" *ngIf="data!=undefined"><h2 style="text-align:center;margin-top:20px">{{data.hours_used}} HOURS</h2></div>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+                <div class="card card-chart"  style="height:200px;margin-top:0px;margin-bottom:0px">
+
+                    <div class="card-body">
+
+
+                        <div class="row">
+                                <div class="col-lg-8 col-md-6 col-sm-6">
+                                        <h4 class="card-title" style= "color:white;margin-left:75px;">OIL</h4>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">update</i> -->
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="progress" style="height: 30px; margin-top:25px; margin-bottom:0px"*ngIf="oil">
+                            <div class="{{setOil()}}" role="progressbar"
+                            aria-valuemin="0" aria-valuemax="100" [style.width]="getOil()" >
+                             <h3 style="color:black;margin-top:8px;">{{oil}} %</h3>
+                            </div>
+                          </div>
+                          <p class="card-category" style="margin-top:30px"> {{notifOil()}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                        </div>
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-2">
+                    <div class="card card-chart"  style="height:200px;margin-top:0px;margin-bottom:0px">
+						<div class="card-body">
+
+                            <div class="row">
+                                    <div class="col-lg-8 col-md-6 col-sm-6">
+                                            <h4 class="card-title" style= "color:white; margin-left:60px;">ACCU</h4>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="stats">
+                                            <!-- <i class="material-icons">update</i> -->
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                            <div class="card-category" *ngIf="data!=undefined"><h2 style="text-align:center;margin-top:20px">{{data.battery_voltage}} V</h2></div>
+                            <p class="card-category"> {{notifaccu()}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> Last Update 10 Seconds Ago
+                            </div>
+                        </div>
+
+                    </div>
+          </div>
+      </div>
+
+  </div>
+</div>
